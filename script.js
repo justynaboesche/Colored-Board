@@ -14,6 +14,7 @@ const createSquare = () => {
 		square.classList.add('square');
 
 		square.addEventListener('mouseover', () => setColor(square));
+		square.addEventListener('mouseout', () => removeColor(square));
 
 		box.appendChild(square);
 	}
@@ -32,6 +33,10 @@ const setColor = square => {
 	const l = '50%';
 
 	square.style.backgroundColor = `hsl(${h},${s},${l})`;
+};
+
+const removeColor = square => {
+	square.style.backgroundColor = 'transparent';
 };
 
 createSquare();
