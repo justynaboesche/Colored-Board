@@ -16,8 +16,6 @@ const createSquare = speed => {
 		square.classList.add('square');
 		square.style.transitionDuration = speed;
 
-		console.log(speed);
-
 		square.addEventListener('mouseover', () => setColor(square));
 		square.addEventListener('mouseout', () => removeColor(square));
 
@@ -49,7 +47,11 @@ function handleSpeed() {
 
 	createSquare(newSpeed);
 }
+function handleColorRange() {
+	range = parseInt(this.dataset.colorRange);
+}
 
 speedBtns.forEach(btn => btn.addEventListener('click', handleSpeed));
+colorBtns.forEach(btn => btn.addEventListener('click', handleColorRange));
 
 createSquare();
